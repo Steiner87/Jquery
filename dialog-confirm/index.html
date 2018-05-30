@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Dialog - Modal confirmation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+
+    <script>
+        $(function() {
+            $("#dialog-confirm").dialog({
+                autoOpen: false,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                },
+                resizable: false,
+                height: "auto",
+                width: 400,
+                modal: true,
+                buttons: {
+                    "Yes": function() {
+                        $(this).dialog("close");
+                    },
+                    "No": function() {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+
+            $("#opener").on("click", function() {
+                $("#dialog-confirm").dialog("open");
+            });
+        });
+
+
+        $(function() {
+            $("#dialog-confirm").dialog({
+                resizable: false,
+                height: "auto",
+                width: 400,
+                modal: true,
+                buttons: {
+                    "Yes": function() {
+                        $(this).dialog("close");
+                    },
+                    "No": function() {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="dialog-confirm" title="Redirect to associated payment?">
+        <p>This load was paid on delivery.If load is updated succesfully would you like to be redirected to the payment creation screen? </p>
+    </div>
+
+
+
+
+
+    <p>Sed vel diam id libero <a href="http://example.com">rutrum convallis</a>. Donec aliquet leo vel magna. Phasellus rhoncus faucibus ante. Etiam bibendum, enim faucibus aliquet rhoncus, arcu felis ultricies neque, sit amet auctor elit eros a lectus.</p>
+    <button id="opener">Button</button>
+
+
+</body>
+
+</html>

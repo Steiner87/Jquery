@@ -1,0 +1,31 @@
+.ui-widget-header {
+    background: rgb(255, 157, 1);
+}
+
+.dialog-confirm {
+    background: red;
+}
+
+.ui-dialog-buttonset button:first-child {
+    color: orange;
+}
+
+.ui-dialog-buttonset button:last-child {
+    color: blue;
+}
+
+.ui-dialog-buttonset button:first-child:focus {
+    outline-color: orange;
+}
+
+.ui-dialog-buttonset button:last-child:focus {
+    outline-color: blue;
+}
+
+#ui-id-1 {
+    color: white;
+}
+
+.wrapper {
+    display: none;
+}
