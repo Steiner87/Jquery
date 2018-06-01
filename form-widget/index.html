@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>datepicker demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h2>One-Way Airlines:Let's make a reservation</h2>
+    <hr>
+    <table>
+        <tr>
+            <td>
+                <label for="datepicker">Pick a departure date</label>
+            </td>
+            <td>
+                <input type="" name="" value="" id="datepicker" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="autocomplete">Finde an airport: </label>
+            </td>
+            <td>
+                <input type="text" id="autocomplete">
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <label for="number">Mill options:</label>
+
+            </td>
+            <td>
+                <select name="number" id="number">
+                    <option value="1" selected>No meal</option>
+                    <option value="2" >Breakfast</option>
+                    <option value="3" >Dinner</option>
+
+                  </select>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                Number of bugs to check
+
+            </td>
+            <td>
+
+                <label for="radio-1">1</label>
+                <input type="radio" name="radio-1" id="radio-1">
+
+                <label for="radio-2">2</label>
+                <input type="radio" name="radio-1" id="radio-2">
+
+                <label for="radio-3">3</label>
+                <input type="radio" name="radio-1" id="radio-3">
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                Type of seat you'd like
+            </td>
+            <td>
+
+                <label for="radio-4">Aisle</label>
+                <input type="radio" name="radio-2" id="radio-4">
+
+                <label for="radio-5">Window</label>
+                <input type="radio" name="radio-2" id="radio-5">
+
+                <label for="radio-6">Exit Row</label>
+                <input type="radio" name="radio-2" id="radio-6">
+
+                <label for="radio-7">Any seat</label>
+                <input type="radio" name="radio-2" id="radio-7">
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+
+                <button>Continue reservation process</button>
+
+            </td>
+
+        </tr>
+    </table>
+
+
+    <script>
+        $("button").button();
+    </script>
+
+    <script>
+        $("input[type='radio']").checkboxradio({
+            icon: false
+        });
+    </script>
+
+
+    <script>
+        $("#number")
+            .selectmenu()
+            .selectmenu("menuWidget")
+            .addClass("overflow");
+    </script>
+
+
+
+
+
+
+
+
+    <script>
+        var tags = ["c++", "java", "php", "coldfusion", "javascript", "asp", "ruby"];
+        $("#autocomplete").autocomplete({
+            source: function(request, response) {
+                var matcher = new RegExp("^" + $.ui.autocomplete.escapeRegex(request.term), "i");
+                response($.grep(tags, function(item) {
+                    return matcher.test(item);
+                }));
+            }
+        });
+    </script>
+    <script>
+        $("#datepicker").datepicker();
+    </script>
+
+</body>
+
+</html>

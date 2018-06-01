@@ -1,0 +1,53 @@
+.ui-button {
+    background: none;
+    margin-right: -5px;
+    color: rgb(3, 76, 139);
+}
+
+.ui-button:hover,
+.ui-button:active:hover {
+    background: none;
+    color: rgb(3, 76, 139);
+}
+
+.ui-button.ui-state-active:hover,
+.ui-button:focus {
+    color: rgb(3, 76, 139);
+}
+
+.ui-button:focus {
+    background: none;
+}
+
+.ui-button:focus:active {
+    color: orange;
+}
+
+.ui-button:focus:hover {
+    background: none;
+    color: orange;
+}
+
+.ui-corner-all {
+    border-radius: 0;
+}
+
+.ui-state-active {
+    color: orange;
+}
+
+.ui-state-active:hover {
+    color: orange;
+}
+
+.ui-state-active {
+    border-color: orange;
+}
+
+table {
+    width: 600px;
+}
+
+.ui-selectmenu-button.ui-button {
+    width: 130px;
+}
