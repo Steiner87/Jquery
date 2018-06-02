@@ -1,0 +1,46 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+li {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    width: 90px;
+    height: 90px;
+}
+
+.ui-state-default {
+    background: none;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.violet {
+    background-color: violet;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.red {
+    background-color: red;
+}
+
+.lightblue {
+    background-color: lightblue;
+}

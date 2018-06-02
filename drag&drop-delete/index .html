@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=utf-8>
+    <title>StarTrackr!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="base.css" media="screen">
+    <link rel="stylesheet" href="dragdrop.css" media="screen">
+
+    <style>
+        #photo-grid img {
+            width: 100px;
+        }
+    </style>
+
+    <title>Drag and Drop</title>
+    <script>
+        $(function() {
+
+            // There's the gallery and the trash
+            var $gallery = $("#gallery"),
+                $trash = $("#trash");
+
+            // Let the gallery items be draggable
+            $("li", $gallery).draggable({
+                cancel: "a.ui-icon", // clicking an icon won't initiate dragging
+                revert: "invalid", // when not dropped, the item will revert back to its initial position
+                containment: "document",
+                helper: "clone",
+                cursor: "move"
+            });
+
+            // Let the trash be droppable, accepting the gallery items
+            $trash.droppable({
+                accept: "#gallery > li",
+                classes: {
+                    "ui-droppable-active": "ui-state-highlight"
+                },
+                drop: function(event, ui) {
+                    deleteImage(ui.draggable);
+                }
+            });
+
+            // Let the gallery be droppable as well, accepting items from the trash
+            $gallery.droppable({
+                accept: "#trash li",
+                classes: {
+                    "ui-droppable-active": "custom-state-active"
+                },
+                drop: function(event, ui) {
+                    recycleImage(ui.draggable);
+                }
+            });
+
+            // Image deletion function
+
+            function deleteImage($item) {
+                $item.fadeOut(function() {
+                    var $list = $("ul", $trash).length ?
+                        $("ul", $trash) :
+                        $("<ul class='gallery ui-helper-reset'/>").appendTo($trash);
+
+                    $item.find("a.ui-icon-trash").remove();
+                    $item.append(recycle_icon).appendTo($list).fadeIn(function() {
+                        $item
+                            .animate({
+                                width: "48px"
+                            })
+                            .find("img")
+                            .animate({
+                                height: "36px"
+                            });
+                    });
+                });
+            }
+
+
+            // Resolve the icons behavior with event delegation
+            $("ul.gallery > li").on("click", function(event) {
+                var $item = $(this),
+                    $target = $(event.target);
+
+                if ($target.is("a.ui-icon-trash")) {
+                    deleteImage($item);
+                } else if ($target.is("a.ui-icon-zoomin")) {
+                    viewLargerImage($target);
+                } else if ($target.is("a.ui-icon-refresh")) {
+                    recycleImage($item);
+                }
+
+                return false;
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+    <script>
+        $(function() {
+            $("#sortable").sortable({
+                revert: true
+            });
+            $("#draggable").draggable({
+                connectToSortable: "#sortable",
+                helper: "clone",
+                revert: "invalid"
+            });
+            $("ul, li").disableSelection();
+        });
+    </script>
+</head>
+
+<body>
+
+    <section id="container">
+        <header id="header">
+            <h1>**************</h1>
+        </header>
+        <div id="content" class="ui-widget ui-helper-clearfix">
+            <h2>Images</h2>
+
+            <div id="trash" class="trash ui-widget-content ui-state-default">
+                <img src="trash.png" alt="trash" />
+                <span id="trash-title">Drag images here to delete</span>
+            </div>
+            <div id="photo-grid">
+                <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
+                    <li class="ui-widget-content ui-corner-tr">
+                        <img src="fader_100.jpg" />
+                    </li>
+                    <li class="ui-widget-content ui-corner-tr">
+                        <img src="beau_100.jpg" />
+
+                    </li>
+                    <li class="ui-widget-content ui-corner-tr">
+                        <img src="glenda_100.jpg" />
+
+                    </li>
+                    <li class="ui-widget-content ui-corner-tr">
+                        <img src="mofat_100.jpg" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <footer id="footer">
+            <p>
+
+            </p>
+        </footer>
+    </section>
+
+</body>
+
+</html>
