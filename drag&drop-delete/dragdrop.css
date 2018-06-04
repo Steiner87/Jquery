@@ -1,19 +1,37 @@
+.ui-widget-content {
+    border: none;
+    background-color: aquamarine;
+}
+
 #photo-grid img {
-  cursor: move;
+    cursor: move;
 }
 
 .trash {
-  padding: 10px 10px;
-  border: 1px solid white;
-  margin-bottom: 10px;
-  width: 50%;
+    padding: 10px 10px;
+    outline: 1px solid rgb(202, 255, 133);
+    margin-bottom: 10px;
+    width: 50%;
+    height: 10em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .highlight {
- border: 1px dashed #b5c051;
- -moz-border-radius: 10px;
+    border: 1px dashed #b5c051;
+    -moz-border-radius: 10px;
 }
 
 .highlight-accept {
-   background: #d9dfa4; 
+    background: #d9dfa4;
+}
+
+.ui-state-highlight {
+    background-image: none;
+    background: none;
+}
+
+.ui-droppable-hover {
+    background-color: rgb(255, 236, 131);
 }
