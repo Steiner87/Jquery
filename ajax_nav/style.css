@@ -1,0 +1,93 @@
+html,
+body {
+    background-color: #333333;
+}
+
+.ui-corner-all {
+    border-radius: 0;
+}
+
+
+/* .ui-tabs {
+    padding: 0;
+} */
+
+.wrapper {
+    margin: 30px 20px 0 20px;
+    border-radius: 20px;
+    border: 1px solid black;
+    background-color: rgb(255, 255, 255);
+}
+
+.ui-widget-header {
+    padding: 20px;
+    border: 0;
+    background-image: none;
+    background-color: #144c85;
+}
+
+[id^="tabs-"],
+h1 {
+    padding: 0 30px 0 30px;
+}
+
+.ui-widget.ui-widget-content {
+    border: none;
+}
+
+
+/* .ui-tabs {
+    padding: 0;
+} */
+
+.ui-corner-all {
+    padding: 10px 0;
+}
+
+.ui-corner-top {
+    border-radius: 20px;
+}
+
+ul {
+    margin: 10px 0;
+}
+
+.ui-tabs .ui-tabs-nav {
+    padding: 10px 30px;
+}
+
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+    background-image: none;
+    background: linear-gradient(to top, #3f79a1, #3f79a1 50%, #5899c7);
+    background-color: #5899c7;
+}
+
+.ui-state-default a,
+.ui-state-default a:link {
+    color: white;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+    border: none;
+    border-top: 1px solid white;
+}
+
+a {
+    text-shadow: 0 2px 2px black;
+}
+
+li {
+    box-shadow: 0 2px 3px 0px black;
+}
