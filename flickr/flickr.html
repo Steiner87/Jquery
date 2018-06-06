@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flickr Feed</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <style>
+        .image {
+            float: left;
+            padding: 10px;
+            border: solid 1px rgb(27, 45, 94);
+            background-color: white;
+            margin: 0 30px 30px 0;
+        }
+        
+        .image:hover {
+            border-color: red;
+            background-color: rgb(204, 204, 204);
+        }
+    </style>
+
+
+
+    <!-- Put jQuery here -->
+    <script src=""></script>
+    <script>
+        $(document).ready(function() {
+
+        }); // end ready
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            Flickr Gallery
+        </header>
+        <div class="content">
+            <div class="main">
+                <h1>Flickr Images</h1>
+                <div id="photos">
+                    <div id="images"></div>
+                </div>
+                <br class="clearLeft">
+            </div>
+        </div>
+        <footer>
+
+        </footer>
+    </div>
+    <script>
+        (function() {
+            var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+
+
+            var obj = {
+                id: "25053835@N03",
+                format: "json"
+            };
+            $.getJSON(flickerAPI, obj)
+                .done(function(data) {
+                    $.each(data.items, function(i, item) {
+                        $("<img>").attr("src", item.media.m).appendTo("#images");
+                        if (i === 3) {
+                            return false;
+                        }
+                    });
+                });
+        })();
+    </script>
+</body>
+
+</html>
