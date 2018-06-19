@@ -5,39 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="ajax.js"></script>
     <title>Form validation</title>
 </head>
 
 <body>
-    <form id="contact" method="post" action="file.php">
-        <!-- Name -->
-        <div>
-            <label for="contact_name">Name:</label>
-            <input type="text" id="contact_name" name="name"></input>
-            <span class="error">This field is required</span>
-        </div>
-        <!-- Email -->
-        <div>
-            <label for="contact_email">Email:</label>
-            <input type="email" id="contact_email" name="email"></input>
-            <span class="error">A valid email address is required</span>
-        </div>
-        <!-- Message -->
-        <div>
-            <label for="contact_message">Message:</label>
-            <textarea id="contact_message" name="message"></textarea>
-            <span class="error">This field is required</span>
-        </div>
-        <!-- Submit Button -->
-        <div id="contact_submit">
-            <button type="submit">Submit</button>
-        </div>
+    <form id="form" method="POST">
+        <input type="text" name="name" id="name" />
+        <input type="text" name="email" id="email" />
+        <textarea name="message" id="message"></textarea>
+        <input type="button" id="submit-btn" value="Отправить" onclick="call()" />
+        <div id="err"></div>
+        <div id="results"> </div>
     </form>
 
-    <script src="validate.js"></script>
+
+
 </body>
 
 </html>
