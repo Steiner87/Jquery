@@ -5,3 +5,25 @@
 .error {
     border: 2px solid red;
 }
+
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 200px;
+}
+
+input,
+textarea {
+    margin: 10px auto;
+    width: 100%;
+}

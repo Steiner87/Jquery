@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Sortable - Connect lists</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #sortable1,
+        #sortable2 {
+            border: 1px solid #eee;
+            width: 142px;
+            min-height: 20px;
+            list-style-type: none;
+            margin: 0;
+            padding: 5px 0 0 0;
+            float: left;
+            margin-right: 10px;
+        }
+        
+        #sortable1 li,
+        #sortable2 li {
+            margin: 0 5px 5px 5px;
+            padding: 5px;
+            font-size: 1.2em;
+            width: 120px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $("#sortable1, #sortable2").sortable({
+                connectWith: ".connectedSortable"
+            }).disableSelection();
+        });
+    </script>
+    <script src="js.js"></script>
+</head>
+
+<body>
+
+    <h1>To-Do List</h1>
+    <form id="form-add-todo" class="form-add-todo">
+        <label for="todo">To do:</label>
+        <input type="text" id="new-todo-item" class="new-todo-item" name="todo" />
+        <input type="submit" id="add-todo-item" class="add-todo-item" value="add the todo" />
+    </form>
+
+    <form id="form-todo-list">
+        <fieldset>
+            <legend>To-do List</legend>
+            <ul id="sortable1" class="todo-list connectedSortable">
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Done List</legend>
+            <ul id="sortable2" class="todo-list connectedSortable">
+            </ul>
+            </ul>
+        </fieldset>
+
+
+
+
+    </form>
+
+
+</body>
+
+</html>
